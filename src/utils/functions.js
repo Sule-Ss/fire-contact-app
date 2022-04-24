@@ -14,9 +14,11 @@ import Toastify from "./toast";
 
 // Bilgi Ekleme
 export const AddUser = (info) => {
+  //db optional
   const db = getDatabase();
   const userRef = ref(db, "baglanti");
   const newUserRef = push(userRef);
+  // set içerisine yeni kullanıcı ve gelmesi gereken bilgileri nesne içinde alıyoruz.
   set(newUserRef, {
     username: info.username,
     phoneNumber: info.phoneNumber,

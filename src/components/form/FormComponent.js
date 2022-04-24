@@ -21,7 +21,7 @@ const FormComponent = ({info,setInfo,handleFormSubmit}) => {
     // const value=e.target.value 
     const {name,value}=e.target
     console.log(name,value)
-    /* burdaki name => inputa göre değişir. username, phoneNumber veya gneder. */
+    /* burdaki name => inputa göre değişir. username, phoneNumber veya gender. */
     setInfo({...info,[name]:value})
   }
 
@@ -36,12 +36,12 @@ const FormComponent = ({info,setInfo,handleFormSubmit}) => {
       <p className="contact-header">
         <div>
           <a
-            href="https://github.com/clarusway"
+            href="https://github.com/sule-ss"
             className="design"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <code>{"<Clarusway/> "}</code>
+            <code>{"<Sule/> "}</code>
           </a>
         </div>
         <span className="design header">design</span>
