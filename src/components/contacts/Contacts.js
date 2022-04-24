@@ -6,7 +6,6 @@ import {
   TableHead,
   TableRow,
   TableBody,
-  rows,
   Paper
 } from "@mui/material";
 import { useFetch,DeleteUser } from "../../utils/functions";
@@ -57,7 +56,7 @@ const Contacts = ({editHandler}) => {
               <TableCell textAlign="center">{item.phoneNumber}</TableCell>
               <TableCell textAlign="center">{item.gender}</TableCell> 
               <TableCell textAlign="center" onClick={()=>DeleteUser(item.id)}>
-                <DeleteIcon/>
+                <DeleteIcon style={{cursor:"pointer"}}/>
               </TableCell> 
               <TableCell textAlign="center"
               onClick={()=>editHandler(
@@ -68,7 +67,7 @@ const Contacts = ({editHandler}) => {
 
               )}
               >
-                <EditIcon/>
+                <EditIcon style={{cursor:"pointer"}}/>
               </TableCell> 
              </TableRow> 
              ))

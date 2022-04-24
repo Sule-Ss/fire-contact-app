@@ -5,26 +5,24 @@ import {
   InputLabel,
   TextField,
   InputAdornment,
-  MenuItem,
   Button,
   Stack,
-  Select,
   Box,
+  NativeSelect,
 } from "@mui/material";
 import { AccountCircle } from "@mui/icons-material";
 import PhoneEnabledIcon from "@mui/icons-material/PhoneEnabled";
 
-const FormComponent = ({info,setInfo,handleFormSubmit}) => {
-  const handleChange=(e)=>{
+const FormComponent = ({ info, setInfo, handleFormSubmit }) => {
+  const handleChange = (e) => {
     e.preventDefault();
-    // const name=e.target.name 
-    // const value=e.target.value 
-    const {name,value}=e.target
-    console.log(name,value)
+    // const name=e.target.name
+    // const value=e.target.value
+    const { name, value } = e.target;
+    console.log(name, value);
     /* burdaki name => inputa göre değişir. username, phoneNumber veya gender. */
-    setInfo({...info,[name]:value})
-  }
-
+    setInfo({ ...info, [name]: value });
+  };
 
   return (
     <Grid
@@ -47,11 +45,12 @@ const FormComponent = ({info,setInfo,handleFormSubmit}) => {
         <span className="design header">design</span>
       </p>
       <h2 className="contact-header">Add Contact</h2>
-    
+
       <Box style={{ backgroundColor: "white", padding: "20px" }}>
         <form onSubmit={handleFormSubmit}>
           <Stack spacing={3} direction="column">
             <TextField
+              required
               variant="outlined"
               name="username"
               value={info.username}
@@ -66,6 +65,7 @@ const FormComponent = ({info,setInfo,handleFormSubmit}) => {
               }}
             />
             <TextField
+              required
               variant="outlined"
               name="phoneNumber"
               value={info.phoneNumber}
@@ -81,17 +81,19 @@ const FormComponent = ({info,setInfo,handleFormSubmit}) => {
             />
             <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
               <InputLabel style={{ paddingLeft: "20px" }}>Gender</InputLabel>
-              <Select
+              <NativeSelect
+                required
                 label="Gender"
                 name="gender"
                 variant="outlined"
                 value={info.gender}
                 onChange={handleChange}
               >
-                <MenuItem value="Female">Female</MenuItem>
-                <MenuItem value="Male">Male</MenuItem>
-                <MenuItem value="Other">Other</MenuItem>
-              </Select>
+                <option value="" />
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Other">Other</option>
+              </NativeSelect>
             </FormControl>
             <Button variant="contained" type="submit" value="Submit">
               ADD
