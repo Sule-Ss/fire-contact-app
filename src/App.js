@@ -14,9 +14,12 @@ function App() {
     e.preventDefault();
     if (info.id) {
       EditUser(info);
+      
     } else {
       AddUser(info);
+
     }
+    setInfo(initialValues)
   };
 
   const editHandler = (id, username, phoneNumber, gender) => {
